@@ -6,10 +6,48 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Visibility="Visible">
-        <CheckBox x:ConnectionId='1' x:Name="checkBox"               Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="168,185,0,0" Width="100"/>
-        <Line x:ConnectionId='2' x:Name="line" Stroke="Black" StrokeThickness="3" X1="200" Y1="200" X2="800" Y2="200" Visibility="Collapsed"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+            
+                <Grid Height="100">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="42"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox x:ConnectionId='1' x:Name="checkBox" Grid.Column="0"                    Margin="7 5 3 5" Height="32" Width="32"/>
+                    <Image Grid.Column="1" Source="Assets/background1.ico" Height="80" Width="80" />
+                    <Line x:ConnectionId='2' x:Name="line" Grid.Column="2" Stretch="Fill" Stroke="Black" X1="1" StrokeThickness="3" VerticalAlignment="Center" Visibility="Collapsed"/>
+                    <TextBlock Grid.Column="2" Text="完成作业" VerticalAlignment="Center" FontSize="20"/>
+                    <AppBarButton Grid.Column="3" Icon="Setting"  VerticalAlignment="Center" Margin="0 23 0 10"  HorizontalAlignment="Left"  IsCompact="True">
+                        <AppBarButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="Edit" />
+                                <MenuFlyoutItem Text="Delete" />
+                            </MenuFlyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
+
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
     </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='3' x:Name="AddAppBarButton" Icon="Add" Label="Add"                          />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
 

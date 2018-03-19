@@ -27,7 +27,7 @@ namespace homework1
             this.InitializeComponent();
         }
 
-        private void check(object sender, RoutedEventArgs e)
+        private void CheckClick(object sender, RoutedEventArgs e)
         {
             if (checkBox.IsChecked == true)
                 line.Visibility = Visibility.Visible;
@@ -35,5 +35,12 @@ namespace homework1
                 line.Visibility = Visibility.Collapsed;
         }
 
+        private void AddBarButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null) return;
+
+            rootFrame.Navigate(typeof(NewPage));
+        }
     }
 }

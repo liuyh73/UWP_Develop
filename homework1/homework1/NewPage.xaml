@@ -8,14 +8,31 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Left" Text="Title" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,204,0,0"/>
-        <TextBox x:Name="title" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="250,229,0,0" Width="296"/>
-        <TextBlock HorizontalAlignment="Left" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,266,0,0"/>
-        <TextBox x:Name="detail" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="250,291,0,0" Width="296" Height="72"/>
-        <TextBlock HorizontalAlignment="Left" Text="Due Date" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,368,0,0"/>
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,393,0,0"/>
-        <Button x:Name="create" Click="Create" Content="Create" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,430,0,0"/>
-        <Button x:Name="cancel" Click="Cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="481,430,0,0"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+        <ScrollViewer Grid.Row="1">
+            <Grid Width="300" Height="500" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" HorizontalAlignment="Left" Text="Title" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="1" x:Name="title" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom" Width="300"/>
+                <TextBlock Grid.Row="2" HorizontalAlignment="Left" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="3" x:Name="detail" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom"  Width="300" Height="72"/>
+                <TextBlock Grid.Row="4" HorizontalAlignment="Left" Text="Due Date" TextWrapping="Wrap" VerticalAlignment="Bottom" />
+                <DatePicker Grid.Row="5" x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
+                <Button Grid.Row="6" x:Name="create" Click="Create" Content="Create" HorizontalAlignment="Left" />
+                <Button Grid.Row="6" x:Name="cancel" Click="Cancel" Content="Cancel" HorizontalAlignment="Right" />
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
