@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>f24e9fe6-f740-4caf-a854-0aae95afb397</PackageIdentityName>
     <PackageIdentityPublisher>CN=liuyh73</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\liuyh73\Desktop\homework1\homework1\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\VS_Projects\homework1\homework1\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>83C12A68C8BB92A8F188162A59968BD021B7FACB50524298DB534D419FC2244B</RegisteredManifestChecksum>
+    <LayoutDir>E:\VS_Projects\homework1\homework1\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>C7A6A8D5696538B12A2CEB6CEAD448C9828F42BF36B24A18821B035A475FEE53</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f24e9fe6-f740-4caf-a854-0aae95afb397_1.0.0.0_x86__06an8vaprdhge</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f24e9fe6-f740-4caf-a854-0aae95afb397_06an8vaprdhge!App</RegisteredUserModeAppID>
     <RegisteredPackageID>f24e9fe6-f740-4caf-a854-0aae95afb397</RegisteredPackageID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T05:36:21.989</Modified>
+      <Modified>2018-03-30T00:34:32.678</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\homework1.exe">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\homework1.exe">
       <PackagePath>entrypoint\homework1.exe</PackagePath>
-      <Modified>2018-03-19T05:36:20.407</Modified>
+      <Modified>2018-03-30T00:34:27.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -495,72 +495,76 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T14:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\background1.ico">
-      <PackagePath>Assets\background1.ico</PackagePath>
-      <Modified>2013-06-27T08:35:36.000</Modified>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\background.jpg">
+      <PackagePath>Assets\background.jpg</PackagePath>
+      <Modified>2018-03-28T15:16:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\background2.ico">
-      <PackagePath>Assets\background2.ico</PackagePath>
-      <Modified>2013-06-27T08:35:36.000</Modified>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\pic1.ico">
+      <PackagePath>Assets\pic1.ico</PackagePath>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\background3.ico">
-      <PackagePath>Assets\background3.ico</PackagePath>
-      <Modified>2013-06-27T08:35:36.000</Modified>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\pic2.ico">
+      <PackagePath>Assets\pic2.ico</PackagePath>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\pic3.ico">
+      <PackagePath>Assets\pic3.ico</PackagePath>
+      <Modified>2018-03-23T00:28:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-03-11T12:07:30.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-09T14:38:42.000</Modified>
+      <Modified>2018-03-23T00:28:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\homework1.xr.xml">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\homework1.xr.xml">
       <PackagePath>homework1.xr.xml</PackagePath>
-      <Modified>2018-03-19T05:34:38.182</Modified>
+      <Modified>2018-03-29T15:59:14.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2017-09-28T09:28:16.000</Modified>
+      <Modified>2018-03-09T18:15:02.357</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T05:36:21.561</Modified>
+      <Modified>2018-03-30T00:34:31.706</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\Core\homework1.exe">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\Core\homework1.exe">
       <PackagePath>homework1.exe</PackagePath>
-      <Modified>2018-03-19T05:36:21.978</Modified>
+      <Modified>2018-03-30T00:34:32.662</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

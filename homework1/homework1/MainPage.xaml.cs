@@ -12,6 +12,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
+using List.ViewModels;
+using Windows.UI.Popups;
+using List.Models;
+using Windows.UI.Core;
+using Windows.UI.Xaml.Media.Imaging;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -20,27 +26,78 @@ namespace homework1
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class MainPage : Page
+    sealed partial class MainPage : Page
     {
+        public static ListItemViewModel ViewModel1 = new ListItemViewModel();
+        public ListItemViewModel ViewModel { get { return ViewModel1; } }
         public MainPage()
         {
             this.InitializeComponent();
+            right.Navigate(typeof(NewPage));
         }
 
-        private void CheckClick(object sender, RoutedEventArgs e)
+        private void Checked(object sender, RoutedEventArgs e)
         {
-            if (checkBox.IsChecked == true)
-                line.Visibility = Visibility.Visible;
+            var parent = VisualTreeHelper.GetParent(sender as DependencyObject);
+            Line line = VisualTreeHelper.GetChild(parent, 2) as Line;
+            line.Opacity = 1;
+        }
+
+        private void Unchecked(object sender, RoutedEventArgs e)
+        {
+            var parent = VisualTreeHelper.GetParent(sender as DependencyObject);
+            Line line = VisualTreeHelper.GetChild(parent, 2) as Line;
+            line.Opacity = 0;
+        }
+
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ViewModel1.SelectedItem = e.ClickedItem as ListItem;
+            if (right.Visibility.ToString() == "Collapsed")
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(NewPage), e.ClickedItem as ListItem);
+            }
             else
-                line.Visibility = Visibility.Collapsed;
+                right.Navigate(typeof(NewPage), e.ClickedItem as ListItem);
         }
 
-        private void AddBarButtonClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void AddBarButtonClick(object sender, RoutedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-            if (rootFrame == null) return;
+            if (right.Visibility.ToString() == "Collapsed")
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(NewPage));
+            }
+            else
+                right.Navigate(typeof(NewPage));
+        }
 
-            rootFrame.Navigate(typeof(NewPage));
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+        }
+
+        private void MenuFlyoutEdit_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel1.SelectedItem = (sender as MenuFlyoutItem).DataContext as ListItem;
+            if (right.Visibility.ToString() == "Collapsed")
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(NewPage), ViewModel.SelectedItem);
+            }
+            else
+                right.Navigate(typeof(NewPage), ViewModel.SelectedItem);
+        }
+
+        private async void MenuFlyoutDelete_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel1.SelectedItem = (sender as MenuFlyoutItem).DataContext as ListItem;
+            ViewModel1.RemoveListItem(ViewModel1.SelectedItem);
+            await new MessageDialog("Delete successfully！").ShowAsync();
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
         }
     }
 }

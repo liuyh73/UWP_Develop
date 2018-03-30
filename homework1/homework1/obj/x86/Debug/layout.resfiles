@@ -1,8 +1,9 @@
 WinMetadata\Windows.winmd
-Assets\background1.ico
-Assets\background2.ico
-Assets\background3.ico
+Assets\background.jpg
 Assets\LockScreenLogo.scale-200.png
+Assets\pic1.ico
+Assets\pic2.ico
+Assets\pic3.ico
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png

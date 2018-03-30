@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>f24e9fe6-f740-4caf-a854-0aae95afb397</PackageIdentityName>
     <PackageIdentityPublisher>CN=liuyh73</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\liuyh73\Desktop\homework1\homework1\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\VS_Projects\homework1\homework1\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>E:\VS_Projects\homework1\homework1\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\homework1.exe">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\homework1.exe">
       <PackagePath>entrypoint\homework1.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
@@ -370,56 +370,59 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.xml.xmlserializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\background1.ico">
-      <PackagePath>Assets\background1.ico</PackagePath>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\background.jpg">
+      <PackagePath>Assets\background.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\background2.ico">
-      <PackagePath>Assets\background2.ico</PackagePath>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\pic1.ico">
+      <PackagePath>Assets\pic1.ico</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\background3.ico">
-      <PackagePath>Assets\background3.ico</PackagePath>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\pic2.ico">
+      <PackagePath>Assets\pic2.ico</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\pic3.ico">
+      <PackagePath>Assets\pic3.ico</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\homework1.xr.xml">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\homework1.xr.xml">
       <PackagePath>homework1.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\liuyh73\Desktop\homework1\homework1\bin\x86\Debug\Core\homework1.exe">
+    <AppxPackagedFile Include="E:\VS_Projects\homework1\homework1\bin\x86\Debug\Core\homework1.exe">
       <PackagePath>homework1.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -6,34 +6,49 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Background.jpg"/>
+    </Page.Background>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+
+        <TextBlock Grid.Row="0" Text="Details" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
         <ScrollViewer Grid.Row="1">
-            <Grid Width="300" Height="500" HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="45"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" HorizontalAlignment="Left" Text="Title" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                <TextBox x:ConnectionId='1' Grid.Row="1" x:Name="title" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom" Width="300"/>
-                <TextBlock Grid.Row="2" HorizontalAlignment="Left" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                <TextBox x:ConnectionId='2' Grid.Row="3" x:Name="detail" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom"  Width="300" Height="72"/>
-                <TextBlock Grid.Row="4" HorizontalAlignment="Left" Text="Due Date" TextWrapping="Wrap" VerticalAlignment="Bottom" />
-                <DatePicker x:ConnectionId='3' Grid.Row="5" x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
-                <Button x:ConnectionId='4' Grid.Row="6" x:Name="create"                Content="Create" HorizontalAlignment="Left" />
-                <Button x:ConnectionId='5' Grid.Row="6" x:Name="cancel"                Content="Cancel" HorizontalAlignment="Right" />
-            </Grid>
+            <StackPanel>
+                <StackPanel Height="Auto" HorizontalAlignment="Center">
+                    <Image x:ConnectionId='3' x:Name="pic" Width="300" Source="Assets/pic3.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform ScaleX="{Binding Value, ElementName=slider}" ScaleY="{Binding Value, ElementName=slider}"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Slider x:ConnectionId='4' Width="300" Minimum="0.4" Maximum="1.0" StepFrequency="0.001" x:Name="slider"/>
+                    <RelativePanel Grid.Row="2" Width="300" HorizontalAlignment="Center">
+                        <AppBarButton x:ConnectionId='8' Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True"                    />
+                    </RelativePanel>
+                    <TextBlock HorizontalAlignment="Left" Text="Title" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="1"/>
+                    <TextBox x:ConnectionId='5' x:Name="title" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom" Width="300" Margin="5"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="1"/>
+                    <TextBox x:ConnectionId='6' x:Name="detail" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom"  Width="300" Height="72" Margin="5"/>
+                    <TextBlock  HorizontalAlignment="Left" Text="Due Date" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="1"/>
+                    <DatePicker x:ConnectionId='7' x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300" Margin="5"/>
+                </StackPanel>
+
+                <Grid Width="300">
+                    <Button x:ConnectionId='1' x:Name="create_update"                       Content="Create" HorizontalAlignment="Left" />
+                    <Button x:ConnectionId='2' x:Name="cancel"                Content="Cancel" HorizontalAlignment="Right" />
+                </Grid>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='9' x:Name="DeleteAppBarButton" Icon="Delete" Label="Delete"                               Visibility="Collapsed"/>
+            <AppBarButton x:ConnectionId='10' x:Name="AddAppBarButton" Icon="Add" Label="Add"                          />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
 

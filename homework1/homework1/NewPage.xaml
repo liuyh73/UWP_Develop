@@ -6,33 +6,48 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Background>
+        <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Background.jpg"/>
+    </Page.Background>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+
+        <TextBlock Grid.Row="0" Text="Details" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
         <ScrollViewer Grid.Row="1">
-            <Grid Width="300" Height="500" HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="45"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" HorizontalAlignment="Left" Text="Title" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                <TextBox Grid.Row="1" x:Name="title" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom" Width="300"/>
-                <TextBlock Grid.Row="2" HorizontalAlignment="Left" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                <TextBox Grid.Row="3" x:Name="detail" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom"  Width="300" Height="72"/>
-                <TextBlock Grid.Row="4" HorizontalAlignment="Left" Text="Due Date" TextWrapping="Wrap" VerticalAlignment="Bottom" />
-                <DatePicker Grid.Row="5" x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
-                <Button Grid.Row="6" x:Name="create" Click="Create" Content="Create" HorizontalAlignment="Left" />
-                <Button Grid.Row="6" x:Name="cancel" Click="Cancel" Content="Cancel" HorizontalAlignment="Right" />
-            </Grid>
+            <StackPanel>
+                <StackPanel Height="Auto" HorizontalAlignment="Center">
+                    <Image x:Name="pic" Width="300" Source="Assets/pic3.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform ScaleX="{Binding Value, ElementName=slider}" ScaleY="{Binding Value, ElementName=slider}"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Slider Width="300" Minimum="0.4" Maximum="1.0" StepFrequency="0.001" x:Name="slider"/>
+                    <RelativePanel Grid.Row="2" Width="300" HorizontalAlignment="Center">
+                        <AppBarButton Icon="Pictures" Label="select" RelativePanel.AlignRightWithPanel="True" Click="GetPicture" />
+                    </RelativePanel>
+                    <TextBlock HorizontalAlignment="Left" Text="Title" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="1"/>
+                    <TextBox x:Name="title" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom" Width="300" Margin="5"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="1"/>
+                    <TextBox x:Name="detail" HorizontalAlignment="Left" Text="" VerticalAlignment="Bottom"  Width="300" Height="72" Margin="5"/>
+                    <TextBlock  HorizontalAlignment="Left" Text="Due Date" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="1"/>
+                    <DatePicker x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300" Margin="5"/>
+                </StackPanel>
+
+                <Grid Width="300">
+                    <Button x:Name="create_update" Click="Create_Update" Content="Create" HorizontalAlignment="Left" />
+                    <Button x:Name="cancel" Click="Cancel" Content="Cancel" HorizontalAlignment="Right" />
+                </Grid>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="DeleteAppBarButton" Icon="Delete" Label="Delete" Click="DeleteBarButtonClick"  Visibility="Collapsed"/>
+            <AppBarButton x:Name="AddAppBarButton" Icon="Add" Label="Add" Click="AddBarButtonClick"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

@@ -132,17 +132,21 @@ namespace homework1.homework1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[6];
             _typeNameTable[0] = "homework1.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "homework1.NewPage";
+            _typeNameTable[3] = "List.ViewModels.ListItemViewModel";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "homework1.NewPage";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[6];
             _typeTable[0] = typeof(global::homework1.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::homework1.NewPage);
+            _typeTable[3] = typeof(global::List.ViewModels.ListItemViewModel);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::homework1.NewPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -178,7 +182,8 @@ namespace homework1.homework1_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::homework1.MainPage(); }
-        private object Activate_3_NewPage() { return new global::homework1.NewPage(); }
+        private object Activate_3_ListItemViewModel() { return new global::List.ViewModels.ListItemViewModel(); }
+        private object Activate_5_NewPage() { return new global::homework1.NewPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -193,6 +198,7 @@ namespace homework1.homework1_XamlTypeInfo
             case 0:   //  homework1.MainPage
                 userType = new global::homework1.homework1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
+                userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -205,9 +211,20 @@ namespace homework1.homework1_XamlTypeInfo
                 xamlType = new global::homework1.homework1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  homework1.NewPage
+            case 3:   //  List.ViewModels.ListItemViewModel
+                userType = new global::homework1.homework1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Object
+                xamlType = new global::homework1.homework1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  homework1.NewPage
                 userType = new global::homework1.homework1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_NewPage;
+                userType.Activator = Activate_5_NewPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -216,11 +233,26 @@ namespace homework1.homework1_XamlTypeInfo
         }
 
 
+        private object get_0_MainPage_ViewModel(object instance)
+        {
+            var that = (global::homework1.MainPage)instance;
+            return that.ViewModel;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::homework1.homework1_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::homework1.homework1_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "homework1.MainPage.ViewModel":
+                userType = (global::homework1.homework1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("homework1.MainPage");
+                xamlMember = new global::homework1.homework1_XamlTypeInfo.XamlMember(this, "ViewModel", "List.ViewModels.ListItemViewModel");
+                xamlMember.Getter = get_0_MainPage_ViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            }
             return xamlMember;
         }
     }

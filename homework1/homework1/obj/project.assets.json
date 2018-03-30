@@ -25576,11 +25576,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\liuyh73\\Desktop\\homework1\\homework1\\homework1.csproj",
+      "projectUniqueName": "E:\\VS_Projects\\homework1\\homework1\\homework1.csproj",
       "projectName": "homework1",
-      "projectPath": "C:\\Users\\liuyh73\\Desktop\\homework1\\homework1\\homework1.csproj",
+      "projectPath": "E:\\VS_Projects\\homework1\\homework1\\homework1.csproj",
       "packagesPath": "C:\\Users\\liuyh73\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\liuyh73\\Desktop\\homework1\\homework1\\obj\\",
+      "outputPath": "E:\\VS_Projects\\homework1\\homework1\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
