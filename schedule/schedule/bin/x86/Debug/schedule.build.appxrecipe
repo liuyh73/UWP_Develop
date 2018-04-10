@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DESKTOP-55DQDG3</Machine>
+    <Machine>DESKTOP-S9S56NM</Machine>
     <WindowsUser>liuyh73</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>63c44838-72f3-4577-b55b-2ea17f8a96ee</PackageIdentityName>
     <PackageIdentityPublisher>CN=liuyh73</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\VS_Projects\UWP_Develop\schedule\schedule\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\bin\x86\Debug\schedule.exe">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\schedule.exe">
       <PackagePath>entrypoint\schedule.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
@@ -67,91 +67,94 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.netcore.portable.compatibility\1.0.2\lib\netcore50\System.dll">
       <PackagePath>System.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\microsoft.toolkit.uwp.notifications\2.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.Notifications.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.Notifications.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.visualbasic\10.0.1\lib\netcore50\Microsoft.VisualBasic.dll">
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.collections\4.0.11\lib\netcore50\System.Collections.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.collections\4.3.0\lib\netcore50\System.Collections.dll">
       <PackagePath>System.Collections.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.diagnostics.tools\4.0.1\lib\netcore50\System.Diagnostics.Tools.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.diagnostics.tools\4.3.0\lib\netcore50\System.Diagnostics.Tools.dll">
       <PackagePath>System.Diagnostics.Tools.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.diagnostics.tracing\4.1.0\lib\netcore50\System.Diagnostics.Tracing.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.diagnostics.tracing\4.3.0\lib\netcore50\System.Diagnostics.Tracing.dll">
       <PackagePath>System.Diagnostics.Tracing.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.globalization\4.0.11\lib\netcore50\System.Globalization.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.globalization\4.3.0\lib\netcore50\System.Globalization.dll">
       <PackagePath>System.Globalization.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.globalization.calendars\4.0.1\lib\netcore50\System.Globalization.Calendars.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.globalization.calendars\4.3.0\lib\netcore50\System.Globalization.Calendars.dll">
       <PackagePath>System.Globalization.Calendars.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.io\4.1.0\lib\netcore50\System.IO.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.io\4.3.0\lib\netcore50\System.IO.dll">
       <PackagePath>System.IO.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.reflection\4.1.0\lib\netcore50\System.Reflection.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.reflection\4.3.0\lib\netcore50\System.Reflection.dll">
       <PackagePath>System.Reflection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.reflection.extensions\4.0.1\lib\netcore50\System.Reflection.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.reflection.extensions\4.3.0\lib\netcore50\System.Reflection.Extensions.dll">
       <PackagePath>System.Reflection.Extensions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.reflection.primitives\4.0.1\lib\netcore50\System.Reflection.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.reflection.primitives\4.3.0\lib\netcore50\System.Reflection.Primitives.dll">
       <PackagePath>System.Reflection.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.resources.resourcemanager\4.0.1\lib\netcore50\System.Resources.ResourceManager.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.resources.resourcemanager\4.3.0\lib\netcore50\System.Resources.ResourceManager.dll">
       <PackagePath>System.Resources.ResourceManager.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.runtime\4.1.0\lib\netcore50\System.Runtime.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.runtime\4.3.0\lib\netcore50\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.runtime.handles\4.0.1\lib\netstandard1.3\System.Runtime.Handles.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.runtime.handles\4.3.0\lib\netstandard1.3\System.Runtime.Handles.dll">
       <PackagePath>System.Runtime.Handles.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.runtime.interopservices\4.1.0\lib\netcore50\System.Runtime.InteropServices.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.runtime.interopservices\4.3.0\lib\netcore50\System.Runtime.InteropServices.dll">
       <PackagePath>System.Runtime.InteropServices.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.text.encoding\4.0.11\lib\netcore50\System.Text.Encoding.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.text.encoding\4.3.0\lib\netcore50\System.Text.Encoding.dll">
       <PackagePath>System.Text.Encoding.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.text.encoding.extensions\4.0.11\lib\netcore50\System.Text.Encoding.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.text.encoding.extensions\4.3.0\lib\netcore50\System.Text.Encoding.Extensions.dll">
       <PackagePath>System.Text.Encoding.Extensions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.threading.tasks\4.0.11\lib\netcore50\System.Threading.Tasks.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.threading.tasks\4.3.0\lib\netcore50\System.Threading.Tasks.dll">
       <PackagePath>System.Threading.Tasks.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.any.system.threading.timer\4.0.1\lib\netcore50\System.Threading.Timer.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.any.system.threading.timer\4.3.0\lib\netcore50\System.Threading.Timer.dll">
       <PackagePath>System.Threading.Timer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win.microsoft.win32.primitives\4.0.1\runtimes\win\lib\netstandard1.3\Microsoft.Win32.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win.microsoft.win32.primitives\4.3.0\runtimes\win\lib\netstandard1.3\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win.system.diagnostics.debug\4.0.11\runtimes\win\lib\netcore50\System.Diagnostics.Debug.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win.system.diagnostics.debug\4.3.0\runtimes\win\lib\netcore50\System.Diagnostics.Debug.dll">
       <PackagePath>System.Diagnostics.Debug.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win.system.io.filesystem\4.0.1\runtimes\win\lib\netcore50\System.IO.FileSystem.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win.system.io.filesystem\4.3.0\runtimes\win\lib\netcore50\System.IO.FileSystem.dll">
       <PackagePath>System.IO.FileSystem.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win.system.net.primitives\4.0.11\runtimes\win\lib\netcore50\System.Net.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win.system.net.primitives\4.3.0\runtimes\win\lib\netcore50\System.Net.Primitives.dll">
       <PackagePath>System.Net.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win.system.net.sockets\4.1.0\runtimes\win\lib\netcore50\System.Net.Sockets.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win.system.net.sockets\4.3.0\runtimes\win\lib\netcore50\System.Net.Sockets.dll">
       <PackagePath>System.Net.Sockets.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win.system.runtime.extensions\4.1.0\runtimes\win\lib\netcore50\System.Runtime.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win.system.runtime.extensions\4.3.0\runtimes\win\lib\netcore50\System.Runtime.Extensions.dll">
       <PackagePath>System.Runtime.Extensions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win7-x86.microsoft.netcore.jit\1.0.3\runtimes\win7-x86\native\clrjit.dll">
       <PackagePath>clrjit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win7-x86.runtime.native.system.io.compression\4.0.1\runtimes\win7-x86\native\clrcompression.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win7-x86.runtime.native.system.io.compression\4.3.0\runtimes\win7-x86\native\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\runtime.win7.system.private.uri\4.0.2\runtimes\win\lib\netcore50\System.Private.Uri.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win7.system.private.uri\4.3.0\runtimes\win\lib\netcore50\System.Private.Uri.dll">
       <PackagePath>System.Private.Uri.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.appcontext\4.1.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll">
       <PackagePath>System.Buffers.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.collections.concurrent\4.0.12\lib\netcore50\System.Collections.Concurrent.dll">
@@ -199,7 +202,7 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.io.compression.zipfile\4.0.1\lib\netstandard1.3\System.IO.Compression.ZipFile.dll">
       <PackagePath>System.IO.Compression.ZipFile.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.io.filesystem.primitives\4.0.1\lib\netstandard1.3\System.IO.FileSystem.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.io.filesystem.primitives\4.3.0\lib\netstandard1.3\System.IO.FileSystem.Primitives.dll">
       <PackagePath>System.IO.FileSystem.Primitives.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.io.isolatedstorage\4.0.1\lib\netcore50\System.IO.IsolatedStorage.dll">
@@ -250,7 +253,7 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.numerics.vectors.windowsruntime\4.0.1\lib\uap10.0\System.Numerics.Vectors.WindowsRuntime.dll">
       <PackagePath>System.Numerics.Vectors.WindowsRuntime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.objectmodel\4.0.12\lib\netcore50\System.ObjectModel.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.objectmodel\4.3.0\lib\netcore50\System.ObjectModel.dll">
       <PackagePath>System.ObjectModel.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.private.datacontractserialization\4.1.2\lib\netstandard1.3\System.Private.DataContractSerialization.dll">
@@ -295,7 +298,7 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.runtime.serialization.xml\4.1.2\lib\netcore50\System.Runtime.Serialization.Xml.dll">
       <PackagePath>System.Runtime.Serialization.Xml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.runtime.windowsruntime\4.0.11\runtimes\win8\lib\netstandard1.3\System.Runtime.WindowsRuntime.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.runtime.windowsruntime\4.3.0\runtimes\win8\lib\netstandard1.3\System.Runtime.WindowsRuntime.dll">
       <PackagePath>System.Runtime.WindowsRuntime.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.runtime.windowsruntime.ui.xaml\4.0.1\runtimes\win8\lib\netstandard1.3\System.Runtime.WindowsRuntime.UI.Xaml.dll">
@@ -340,25 +343,25 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.text.encoding.codepages\4.0.1\runtimes\win\lib\netstandard1.3\System.Text.Encoding.CodePages.dll">
       <PackagePath>System.Text.Encoding.CodePages.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.text.regularexpressions\4.1.0\lib\netcore50\System.Text.RegularExpressions.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.text.regularexpressions\4.3.0\lib\netcore50\System.Text.RegularExpressions.dll">
       <PackagePath>System.Text.RegularExpressions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.threading\4.0.11\lib\netcore50\System.Threading.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.threading\4.3.0\lib\netcore50\System.Threading.dll">
       <PackagePath>System.Threading.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.threading.overlapped\4.0.1\runtimes\win\lib\netcore50\System.Threading.Overlapped.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.threading.overlapped\4.3.0\runtimes\win\lib\netcore50\System.Threading.Overlapped.dll">
       <PackagePath>System.Threading.Overlapped.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.threading.tasks.dataflow\4.6.0\lib\netstandard1.1\System.Threading.Tasks.Dataflow.dll">
       <PackagePath>System.Threading.Tasks.Dataflow.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.threading.tasks.extensions\4.0.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.threading.tasks.extensions\4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll">
       <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.threading.tasks.parallel\4.0.1\lib\netcore50\System.Threading.Tasks.Parallel.dll">
       <PackagePath>System.Threading.Tasks.Parallel.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.xml.readerwriter\4.0.11\lib\netcore50\System.Xml.ReaderWriter.dll">
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\system.xml.readerwriter\4.3.0\lib\netcore50\System.Xml.ReaderWriter.dll">
       <PackagePath>System.Xml.ReaderWriter.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.xml.xdocument\4.0.11\lib\netcore50\System.Xml.XDocument.dll">
@@ -370,47 +373,59 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.xml.xmlserializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\background.jpg">
+      <PackagePath>Assets\background.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic1.ico">
+      <PackagePath>Assets\pic1.ico</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic2.ico">
+      <PackagePath>Assets\pic2.ico</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic3.ico">
+      <PackagePath>Assets\pic3.ico</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\bin\x86\Debug\schedule.xr.xml">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\schedule.xr.xml">
       <PackagePath>schedule.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\schedule\schedule\bin\x86\Debug\Core\schedule.exe">
+    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\Core\schedule.exe">
       <PackagePath>schedule.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

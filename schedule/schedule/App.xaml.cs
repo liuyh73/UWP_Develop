@@ -1,14 +1,17 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -33,7 +36,56 @@ namespace schedule
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            TileContent content = new TileContent()
+            {
+                /*
+                Visual = new TileVisual()
+                {
+                    TileSmall = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText(){ Text = "Small"}
+                            }
+                        }
+                    },
 
+                    TileMedium = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText(){ Text = "Medium"}
+                            }
+                        }
+                    },
+
+                    TileWide = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText(){ Text = "Wide"}
+                            }
+                        }
+                    },
+
+                    TileLarge = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
+                            {
+                                new AdaptiveText(){ Text = "Large"}
+                            }
+                        }
+                    },
+                }*/
+            };
             MainPage.ViewModel1.AddListItem(null, 0.4, "test1", "test1", DateTimeOffset.Now);
             MainPage.ViewModel1.AddListItem(null, 0.4, "test2", "test2", DateTimeOffset.Now);
         }

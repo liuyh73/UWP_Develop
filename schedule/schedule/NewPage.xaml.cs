@@ -12,6 +12,9 @@ using List.Models;
 using Windows.UI.Xaml.Media;
 using Windows.Storage;
 using System.Diagnostics;
+using schedule.Services;
+using Windows.Data.Xml.Dom;
+using Windows.UI.Notifications;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -49,6 +52,7 @@ namespace schedule
                 Frame rootFrame = Window.Current.Content as Frame;
                 MainPage.ViewModel1.AddListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
                 rootFrame.Navigate(typeof(MainPage));
+                TileService.SetBadgeCountOnTile(MainPage.ViewModel1.AllItems.Count);
                 await new MessageDialog("Create successfully!").ShowAsync();
             }
             else
@@ -57,6 +61,10 @@ namespace schedule
                 MainPage.ViewModel1.UpdateListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
                 rootFrame.Navigate(typeof(MainPage));
                 MainPage.ViewModel1.SelectedItem = null;
+                XmlDocument xmlDoc = TileService.CreateTiles(new Data.PrimaryTile());
+                TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
+                TileNotification notification = new TileNotification(xmlDoc);
+                updater.Update(notification);
                 await new MessageDialog("Update successfully!").ShowAsync();
             }
         }

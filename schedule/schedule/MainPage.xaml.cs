@@ -25,6 +25,9 @@ using Windows.Storage.Streams;
 using Windows.Storage.AccessCache;
 using System.Threading.Tasks;
 using Windows.Graphics.Imaging;
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+using schedule.Services;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -100,6 +103,10 @@ namespace schedule
                 MainPage.ViewModel1.UpdateListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
                 rootFrame.Navigate(typeof(MainPage));
                 ViewModel1.SelectedItem = null;
+                /*XmlDocument xmlDoc = TileService.CreateTiles(new Data.PrimaryTile());
+                TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
+                TileNotification notification = new TileNotification(xmlDoc);
+                updater.Update(notification);*/
                 await new MessageDialog("Update successfully!").ShowAsync();
             }
         }
