@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
 
 namespace List.ViewModels
 {
-    class ListItemViewModel
+    public class ListItemViewModel
     {
         private ObservableCollection<Models.ListItem> allItems = new ObservableCollection<Models.ListItem>();
         public ObservableCollection<Models.ListItem> AllItems { get { return this.allItems; } }
@@ -17,7 +13,6 @@ namespace List.ViewModels
         public ListItemViewModel()
         {
             this.selectedItem = null;
-
         }
 
         public Models.ListItem SelectedItem
@@ -26,9 +21,9 @@ namespace List.ViewModels
             set { this.selectedItem = value; }
         }
 
-        public void AddListItem(ImageSource img, double size, string title, string detail, DateTimeOffset date)
+        public void AddListItem(ImageSource img, string picPath, double size, string title, string detail, DateTimeOffset date)
         {
-            this.allItems.Add(new Models.ListItem(img, size, title, detail, date));
+            this.allItems.Add(new Models.ListItem("", img, picPath, size, title, detail, date));
         }
 
         public void RemoveListItem(Models.ListItem SelectedItem1)
@@ -37,9 +32,10 @@ namespace List.ViewModels
             this.selectedItem = null;
         }
 
-        public void UpdateListItem(ImageSource img, double size, string title, string detail, DateTimeOffset date)
+        public void UpdateListItem(ImageSource img, string picPath, double size, string title, string detail, DateTimeOffset date)
         {
             this.selectedItem.Img = img;
+            this.selectedItem.ImgPath = picPath;
             this.selectedItem.Size = size;
             this.selectedItem.Title = title;
             this.selectedItem.Detail = detail;

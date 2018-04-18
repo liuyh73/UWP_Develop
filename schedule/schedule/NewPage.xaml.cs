@@ -3,18 +3,13 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
-using Windows.UI.Text;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Core;
-using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
-using List.Models;
-using Windows.UI.Xaml.Media;
 using Windows.Storage;
 using System.Diagnostics;
 using schedule.Services;
-using Windows.Data.Xml.Dom;
-using Windows.UI.Notifications;
+using Windows.UI.Core;
+
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -50,21 +45,21 @@ namespace schedule
             else if (create_update.Content.ToString() == "Create")
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                MainPage.ViewModel1.AddListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
+                MainPage.ViewModel1.AddListItem(pic.Source, GetSelectPicture.picPath, slider.Value, title.Text, detail.Text, datePicker.Date);
                 rootFrame.Navigate(typeof(MainPage));
                 TileService.SetBadgeCountOnTile(MainPage.ViewModel1.AllItems.Count);
+                TileService.UpdateTile();
+                ToastService.CreateNotify();
                 await new MessageDialog("Create successfully!").ShowAsync();
             }
             else
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                MainPage.ViewModel1.UpdateListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
+                MainPage.ViewModel1.UpdateListItem(pic.Source, GetSelectPicture.picPath, slider.Value, title.Text, detail.Text, datePicker.Date);
                 rootFrame.Navigate(typeof(MainPage));
                 MainPage.ViewModel1.SelectedItem = null;
-                XmlDocument xmlDoc = TileService.CreateTiles(new Data.PrimaryTile());
-                TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
-                TileNotification notification = new TileNotification(xmlDoc);
-                updater.Update(notification);
+                TileService.UpdateTile();
+                ToastService.UpdateNotify();
                 await new MessageDialog("Update successfully!").ShowAsync();
             }
         }
@@ -87,6 +82,8 @@ namespace schedule
             MainPage.ViewModel1.SelectedItem = null;
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(MainPage));
+            TileService.UpdateTile();
+            ToastService.DeleteNotify();
             await new MessageDialog("Delete successfully！").ShowAsync();
         }
 
@@ -102,8 +99,11 @@ namespace schedule
                     ["date"] = datePicker.Date,
                     ["size"] = slider.Value,
                     ["create_update"] = create_update.Content,
-                    ["imgname"] = GetSelectPicture.picName
+                    ["imgname"] = GetSelectPicture.picName,
+                    ["imgpath"] = GetSelectPicture.picPath,
                 };
+                if (MainPage.ViewModel1.SelectedItem != null)
+                    compositeInfo["seleted"] = MainPage.ViewModel1.SelectedItem.Id;
                 Debug.WriteLine(compositeInfo["title"] + " " + compositeInfo["detail"] + " " + compositeInfo["date"]);
                 ApplicationData.Current.LocalSettings.Values["info"] = compositeInfo;
                 Debug.WriteLine(compositeInfo + " ");
@@ -113,14 +113,16 @@ namespace schedule
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             Assignment();
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
             if (e.NavigationMode == NavigationMode.New)
             {
-                Debug.WriteLine("infoRestore????????????????????");
+                //Debug.WriteLine("infoRestore????????????????????");
                 ApplicationData.Current.LocalSettings.Values.Remove("info");
             }
             else
             {
-                Debug.WriteLine("infoRestore!!!!!!!!!!!!!!!!!!");
+                //Debug.WriteLine("infoRestore!!!!!!!!!!!!!!!!!!");
                 if (ApplicationData.Current.LocalSettings.Values.ContainsKey("info"))
                 {
                     Debug.WriteLine("infoRestore!");
@@ -130,10 +132,11 @@ namespace schedule
                     datePicker.Date = (DateTimeOffset)compositeInfo["date"];
                     slider.Value = (double)compositeInfo["size"];
                     create_update.Content = (string)compositeInfo["create_update"];
-
                     GetSelectPicture.picName = (string)compositeInfo["imgname"];
+                    GetSelectPicture.picPath = (string)compositeInfo["imgpath"];
+
                     if (GetSelectPicture.picName == "")
-                        pic.Source = new BitmapImage(new Uri("ms-appx:///Assets/pic3.ico"));
+                        pic.Source = new BitmapImage(new Uri("ms-appx:///Assets\\pic1.ico"));
                     else
                     {
                         var file = await ApplicationData.Current.LocalFolder.GetFileAsync(GetSelectPicture.picName);
@@ -153,7 +156,7 @@ namespace schedule
             if (MainPage.ViewModel1.SelectedItem == null)
             {
                 DeleteAppBarButton.Visibility = Visibility.Collapsed;
-                pic.Source = new BitmapImage(new Uri("ms-appx:///Assets/pic3.ico"));
+                pic.Source = new BitmapImage(new Uri("ms-appx:///Assets\\pic1.ico"));
                 title.Text = "";
                 slider.Value = 0.4;
                 detail.Text = "";

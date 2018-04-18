@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DESKTOP-S9S56NM</Machine>
+    <Machine>DESKTOP-55DQDG3</Machine>
     <WindowsUser>liuyh73</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>63c44838-72f3-4577-b55b-2ea17f8a96ee</PackageIdentityName>
     <PackageIdentityPublisher>CN=liuyh73</PackageIdentityPublisher>
-    <IntermediateOutputPath>E:\VS_Projects\UWP_Develop\schedule\schedule\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>7C461F850C3E8CEE47F702665B1CCE1BBCD3C368F81B7CAA35520C919B53E5F6</RegisteredManifestChecksum>
+    <LayoutDir>D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>7D5B887F928A8C3A1BEA97DFA444E98AF13CD68D96B3FD17924C30183D255EA4</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>63c44838-72f3-4577-b55b-2ea17f8a96ee_1.0.0.0_x86__06an8vaprdhge</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>63c44838-72f3-4577-b55b-2ea17f8a96ee_06an8vaprdhge!App</RegisteredUserModeAppID>
     <RegisteredPackageID>63c44838-72f3-4577-b55b-2ea17f8a96ee</RegisteredPackageID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T08:19:58.156</Modified>
+      <Modified>2018-04-18T14:41:19.678</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\schedule.exe">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\schedule.exe">
       <PackagePath>entrypoint\schedule.exe</PackagePath>
-      <Modified>2018-04-10T08:19:53.918</Modified>
+      <Modified>2018-04-18T14:41:19.004</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -202,6 +202,14 @@
     <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\runtime.win7.system.private.uri\4.3.0\runtimes\win\lib\netcore50\System.Private.Uri.dll">
       <PackagePath>System.Private.Uri.dll</PackagePath>
       <Modified>2016-11-04T20:56:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\sqlite.net-pcl\3.1.1\lib\Windows8\SQLite.Net.Platform.WinRT.dll">
+      <PackagePath>SQLite.Net.Platform.WinRT.dll</PackagePath>
+      <Modified>2015-11-06T09:18:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\liuyh73\.nuget\packages\sqlite.net.core-pcl\3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll">
+      <PackagePath>SQLite.Net.dll</PackagePath>
+      <Modified>2015-11-06T09:18:40.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.appcontext\4.1.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -499,76 +507,239 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T14:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\background.jpg">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.23.1\Redist\Debug\x86\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2018-04-16T14:32:39.179</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\background.jpg">
       <PackagePath>Assets\background.jpg</PackagePath>
-      <Modified>2018-04-10T06:14:29.758</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic1.ico">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic1.ico">
       <PackagePath>Assets\pic1.ico</PackagePath>
-      <Modified>2018-04-10T06:14:29.761</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic2.ico">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic2.ico">
       <PackagePath>Assets\pic2.ico</PackagePath>
-      <Modified>2018-04-10T06:14:29.764</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic3.ico">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\pic3.ico">
       <PackagePath>Assets\pic3.ico</PackagePath>
-      <Modified>2018-04-10T06:14:29.767</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-04-10T06:14:29.786</Modified>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Schedule.png">
+      <PackagePath>Assets\Schedule.png</PackagePath>
+      <Modified>2018-04-11T04:54:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square310x310Logo.scale-100.png">
+      <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square310x310Logo.scale-125.png">
+      <PackagePath>Assets\Square310x310Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square310x310Logo.scale-150.png">
+      <PackagePath>Assets\Square310x310Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square310x310Logo.scale-200.png">
+      <PackagePath>Assets\Square310x310Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square310x310Logo.scale-400.png">
+      <PackagePath>Assets\Square310x310Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square71x71Logo.scale-100.png">
+      <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square71x71Logo.scale-125.png">
+      <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square71x71Logo.scale-150.png">
+      <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square71x71Logo.scale-200.png">
+      <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square71x71Logo.scale-400.png">
+      <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:56:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-11T04:57:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2018-04-10T06:14:29.739</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T06:14:29.742</Modified>
+      <Modified>2018-04-11T04:57:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T06:14:29.744</Modified>
+      <Modified>2018-04-11T04:56:58.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T06:14:29.746</Modified>
+      <Modified>2018-04-11T04:56:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T06:14:29.749</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T06:14:29.751</Modified>
+      <Modified>2018-04-10T10:56:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T06:14:29.753</Modified>
+      <Modified>2018-04-11T04:57:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\schedule.xr.xml">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2018-04-10T10:56:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\schedule.xr.xml">
       <PackagePath>schedule.xr.xml</PackagePath>
-      <Modified>2018-04-10T06:14:31.359</Modified>
+      <Modified>2018-04-17T12:16:56.693</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-09-28T09:28:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-10T07:38:35.831</Modified>
+      <Modified>2018-04-17T15:03:39.491</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\Core\schedule.exe">
+    <AppxPackagedFile Include="D:\coursewave\现代操作系统应用开发\VS_Projects\UWP_Develop\schedule\schedule\bin\x86\Debug\Core\schedule.exe">
       <PackagePath>schedule.exe</PackagePath>
-      <Modified>2018-04-10T08:19:58.140</Modified>
+      <Modified>2018-04-18T14:41:19.671</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

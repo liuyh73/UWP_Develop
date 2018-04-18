@@ -21,7 +21,7 @@
         <ScrollViewer Grid.Row="1">
             <StackPanel>
                 <StackPanel Height="Auto" HorizontalAlignment="Center">
-                    <Image x:Name="pic" Width="300" Source="Assets/pic3.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
+                    <Image x:Name="pic" Width="300" Source="Assets/pic1.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
                             <CompositeTransform ScaleX="{Binding Value, ElementName=slider}" ScaleY="{Binding Value, ElementName=slider}"/>
                         </Image.RenderTransform>

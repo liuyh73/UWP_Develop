@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
@@ -22,12 +15,9 @@ using Windows.Storage;
 using System.Diagnostics;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
-using Windows.Storage.AccessCache;
-using System.Threading.Tasks;
-using Windows.Graphics.Imaging;
-using Windows.UI.Notifications;
-using Windows.Data.Xml.Dom;
 using schedule.Services;
+using Windows.ApplicationModel.DataTransfer;
+using System.Text;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -40,7 +30,6 @@ namespace schedule
     {
         public static ListItemViewModel ViewModel1 = new ListItemViewModel();
         public ListItemViewModel ViewModel { get { return ViewModel1; } }
-        //private Task<byte[]> imageDataBytes;
         public MainPage()
         {
             this.InitializeComponent();
@@ -92,21 +81,22 @@ namespace schedule
             else if (create_update.Content.ToString() == "Create")
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                MainPage.ViewModel1.AddListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
+                //Debug.WriteLine(datePicker.Date.LocalDateTime);
+                ViewModel1.AddListItem(pic.Source, GetSelectPicture.picPath, slider.Value, title.Text, detail.Text, datePicker.Date);
+
                 rootFrame.Navigate(typeof(MainPage));
+                TileService.UpdateTile();
+                ToastService.CreateNotify();
                 await new MessageDialog("Create successfully!").ShowAsync();
             }
             else
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                //Debug.WriteLine(pic.Source.ToString()+"****************************");
-                MainPage.ViewModel1.UpdateListItem(pic.Source, slider.Value, title.Text, detail.Text, datePicker.Date);
+                ViewModel1.UpdateListItem(pic.Source, GetSelectPicture.picPath, slider.Value, title.Text, detail.Text, datePicker.Date);
                 rootFrame.Navigate(typeof(MainPage));
                 ViewModel1.SelectedItem = null;
-                /*XmlDocument xmlDoc = TileService.CreateTiles(new Data.PrimaryTile());
-                TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
-                TileNotification notification = new TileNotification(xmlDoc);
-                updater.Update(notification);*/
+                TileService.UpdateTile();
+                ToastService.UpdateNotify();
                 await new MessageDialog("Update successfully!").ShowAsync();
             }
         }
@@ -116,30 +106,6 @@ namespace schedule
             Assignment();
         }
 
-        /*public async Task<ImageSource> ToImageSource(byte[] source)
-        {
-            using (var stream = new MemoryStream(source))
-            {
-                var bitmap = new BitmapImage();
-                await bitmap.SetSourceAsync(stream.AsRandomAccessStream());
-                return bitmap;
-            }
-        }
-
-        public async Task<byte[]> ToBytes(ImageSource source)
-        {
-            var image = new Image() { Source = source };
-            var bitmap = new RenderTargetBitmap();
-            await bitmap.RenderAsync(image);
-            var buffer = await bitmap.GetPixelsAsync();
-            using (var dataReader = DataReader.FromBuffer(await bitmap.GetPixelsAsync()))
-            {
-                var bytes = new byte[buffer.Length];
-                await dataReader.LoadAsync(buffer.Length);
-                dataReader.ReadBytes(bytes);
-                return bytes;
-            }
-        }*/
         private void GetPicture(object sender, RoutedEventArgs e)
         {
             var getSelectPicture = new GetSelectPicture();
@@ -159,10 +125,46 @@ namespace schedule
         private async void DeleteBarButtonClick(object sender, RoutedEventArgs e)
         {
             DeleteAppBarButton.Visibility = Visibility.Collapsed;
-            MainPage.ViewModel1.RemoveListItem(MainPage.ViewModel1.SelectedItem);
+            ViewModel1.RemoveListItem(ViewModel1.SelectedItem);
             ViewModel1.SelectedItem = null;
             Assignment();
+            TileService.UpdateTile();
+            ToastService.DeleteNotify();
             await new MessageDialog("Delete successfully！").ShowAsync();
+        }
+
+        private void MenuFlyoutShare_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel1.SelectedItem = (sender as MenuFlyoutItem).DataContext as ListItem;
+            DataTransferManager.ShowShareUI();
+        }
+
+        private async void OnShareDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        {
+            var dp = args.Request.Data;
+            var deferral = args.Request.GetDeferral();
+            var imgName = ViewModel1.SelectedItem.ImgPath.Substring(ViewModel1.SelectedItem.ImgPath.LastIndexOf('\\') + 1);
+
+            if (imgName == "pic1.ico")
+            {
+                var photoFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///" + ViewModel1.SelectedItem.ImgPath));
+                dp.SetStorageItems(new List<StorageFile> { photoFile });
+            }
+            else
+            {
+                var file = await ApplicationData.Current.LocalFolder.GetFileAsync(imgName);
+                IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
+                var picStream = RandomAccessStreamReference.CreateFromStream(fileStream);
+                dp.SetBitmap(picStream);
+            }
+            //var photoFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///"+ViewModel1.SelectedItem.ImgPath));
+            var TextToShare = "Item Title: "+ViewModel1.SelectedItem.Title + "\n" + "Item Detail: "+ ViewModel1.SelectedItem.Detail + "\n" + "Item Create Time: "+ViewModel1.SelectedItem.Date;
+            dp.Properties.Title = "Share One ListItem";
+            dp.Properties.Description = "This ListItem is the one that you have not finished!";
+            //dp.SetStorageItems(new List<StorageFile> { photoFile});
+            dp.SetText(TextToShare);
+            dp.SetWebLink(new Uri("http://www.ListItem.com/Items/item.jpg"));
+            deferral.Complete();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -171,7 +173,6 @@ namespace schedule
             {
                 ApplicationDataCompositeValue composite = new ApplicationDataCompositeValue();
 
-                //imageDataBytes = ToBytes(pic.Source);
                 List<ListItem> listItems = new List<ListItem>();
                 for (var i = 0; i < ViewModel1.AllItems.Count(); i++)
                     composite["ListItem" + i] = ViewModel1.AllItems[i].Finish;
@@ -181,8 +182,12 @@ namespace schedule
                 composite["size"] = slider.Value;
                 composite["create_update"] = create_update.Content;
                 composite["imgname"] = GetSelectPicture.picName;
+                composite["imgpath"]= GetSelectPicture.picPath;
+                if(ViewModel1.SelectedItem!=null)
+                    composite["seleted"] = ViewModel1.SelectedItem.Id;
                 ApplicationData.Current.LocalSettings.Values["allItems"] = composite;
             }
+            DataTransferManager.GetForCurrentView().DataRequested -= OnShareDataRequested;
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
@@ -191,17 +196,16 @@ namespace schedule
 
             if (e.NavigationMode == NavigationMode.New)
             {
-                Debug.WriteLine("restore!!!");
+                //Debug.WriteLine("restore!!!");
                 ApplicationData.Current.LocalSettings.Values.Remove("allItems");
             }
             else
             {
-                Debug.WriteLine("restore!!");
+                //Debug.WriteLine("restore!!");
                 if (ApplicationData.Current.LocalSettings.Values.ContainsKey("allItems"))
                 {
-                    Debug.WriteLine("restore!");
+                    //Debug.WriteLine("restore!");
                     var composite = ApplicationData.Current.LocalSettings.Values["allItems"] as ApplicationDataCompositeValue;
-
                     for (var i = 0; i < ViewModel1.AllItems.Count(); i++)
                         ViewModel1.AllItems[i].Finish = (bool?)composite["ListItem" + i];
                     title.Text = (string)composite["title"];
@@ -210,9 +214,10 @@ namespace schedule
                     slider.Value = (double)composite["size"];
                     create_update.Content = (string)composite["create_update"];
                     GetSelectPicture.picName = (string)composite["imgname"];
+                    GetSelectPicture.picPath = (string)composite["imgpath"];
 
                     if (GetSelectPicture.picName == "")
-                        pic.Source = new BitmapImage(new Uri("ms-appx:///Assets/pic3.ico"));
+                        pic.Source = new BitmapImage(new Uri("ms-appx:///Assets\\pic1.ico"));
                     else
                     {
                         var file = await ApplicationData.Current.LocalFolder.GetFileAsync(GetSelectPicture.picName);
@@ -221,10 +226,10 @@ namespace schedule
                         await bitmapImage.SetSourceAsync(fileStream);
                         pic.Source = bitmapImage;
                     }
-                    // pic.Source = await ToImageSource((byte[])composite["imageData"]);
                     ApplicationData.Current.LocalSettings.Values.Remove("allItems");
                 }
             }
+            DataTransferManager.GetForCurrentView().DataRequested += OnShareDataRequested;
         }
 
         private void MenuFlyoutEdit_Click(object sender, RoutedEventArgs e)
@@ -245,6 +250,8 @@ namespace schedule
             ViewModel1.RemoveListItem(ViewModel1.SelectedItem);
             ViewModel1.SelectedItem = null;
             Assignment();
+            TileService.UpdateTile();
+            ToastService.DeleteNotify();
             await new MessageDialog("Delete successfully！").ShowAsync();
         }
 
@@ -253,7 +260,7 @@ namespace schedule
             if (ViewModel1.SelectedItem == null)
             {
                 DeleteAppBarButton.Visibility = Visibility.Collapsed;
-                pic.Source = new BitmapImage(new Uri("ms-appx:///Assets/pic3.ico"));
+                pic.Source = new BitmapImage(new Uri("ms-appx:///Assets\\pic1.ico"));
                 title.Text = "";
                 slider.Value = 0.4;
                 detail.Text = "";
@@ -271,11 +278,27 @@ namespace schedule
                 create_update.Content = "Update";
             }
         }
+
+        private async void search_Click(object sender, RoutedEventArgs e)
+        {
+            List<ListItem> listItems=new List<ListItem>();
+            foreach (ListItem item in ViewModel1.AllItems)
+                if(item.Title.Contains(search.Text) || item.Detail.Contains(search.Text) || ((string)(item.Date + "")).Contains(search.Text))
+                    listItems.Add(item);
+            //Debug.WriteLine(listItems.Count);
+            StringBuilder searchResult =new StringBuilder();
+            for(int i=0; i<listItems.Count; i++)
+                searchResult.Append("Title: ").Append(listItems[i].Title).Append("   Detail: ").Append(listItems[i].Detail).Append("   Date: ").Append(listItems[i].Date.ToLocalTime()).Append("\n");
+            if (searchResult.ToString() == "")
+                searchResult.Append("Not Find!");
+            await new MessageDialog(searchResult.ToString()).ShowAsync();
+        }
     }
 
     internal class GetSelectPicture
     {
         public static string picName = "";
+        public static string picPath = "Assets\\pic1.ico";
         public async void selectPic(Image pic)
         {
             var fop = new FileOpenPicker();
@@ -296,8 +319,10 @@ namespace schedule
                     await bitmapImage.SetSourceAsync(fileStream);
                     pic.Source = bitmapImage;
 
-                    picName = file.Path.Substring(file.Path.LastIndexOf('\\') + 1);
+                    picPath = file.Path;
+                    picName = picPath.Substring(picPath.LastIndexOf('\\') + 1);
                     await file.CopyAsync(ApplicationData.Current.LocalFolder, picName, NameCollisionOption.ReplaceExisting);
+                    //path = Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(file);
                 }
             }
             catch (Exception)

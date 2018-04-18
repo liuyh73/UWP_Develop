@@ -1,36 +1,105 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Windows.Data.Xml.Dom;
 using System.Xml.Linq;
+using Windows.UI.Notifications;
 
 namespace schedule.Services
 {
-    static class ToastService
+    public class ToastService
     {
-        public static System.Xml.XmlDocument CreateToast()
+        public static XmlDocument CreateToast()
         {
             XDocument xDoc = new XDocument(
                 new XElement("toast",
                     new XElement("visual",
                         new XElement("binding", new XAttribute("template", "ToastGeneric"),
-                            new XElement("text", "To Do List"),
-                            new XElement("text", "Is the task complete?")
-                            ) // binding  
-                        ), // visual  
+                            new XElement("text", "ListItem"),
+                            new XElement("text", "You have created a new item!")
+                        )
+                    ),
                     new XElement("actions",
-                        new XElement("action", new XAttribute("activationType", "background"),
-                            new XAttribute("content", "Yes"), new XAttribute("arguments", "yes")),
-                        new XElement("action", new XAttribute("activationType", "background"),
-                            new XAttribute("content", "No"), new XAttribute("arguments", "no"))
-                        ) // actions  
+                        new XElement("action", new XAttribute("activationType", "foreground"),
+                            new XAttribute("content", "Yes"), new XAttribute("arguments", "yes"))
+                        /*new XElement("action", new XAttribute("activationType", "background"),
+                            new XAttribute("content", "No"), new XAttribute("arguments", "no"))*/
                     )
-                );
+                )
+            );
 
-            System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
+            XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xDoc.ToString());
             return xmlDoc;
+        }
+
+        public static XmlDocument UpdateToast()
+        {
+            XDocument xDoc = new XDocument(
+                new XElement("toast",
+                    new XElement("visual",
+                        new XElement("binding", new XAttribute("template", "ToastGeneric"),
+                            new XElement("text", "ListItem"),
+                            new XElement("text", "You have updated the item!")
+                        )
+                    ),
+                    new XElement("actions",
+                        new XElement("action", new XAttribute("activationType", "foreground"),
+                            new XAttribute("content", "Yes"), new XAttribute("arguments", "yes"))
+                    /*new XElement("action", new XAttribute("activationType", "background"),
+                        new XAttribute("content", "No"), new XAttribute("arguments", "no"))*/
+                    )
+                )
+            );
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xDoc.ToString());
+            return xmlDoc;
+        }
+
+        public static XmlDocument DeleteToast()
+        {
+            XDocument xDoc = new XDocument(
+                new XElement("toast",
+                    new XElement("visual",
+                        new XElement("binding", new XAttribute("template", "ToastGeneric"),
+                            new XElement("text", "ListItem"),
+                            new XElement("text", "You have deleted a item!")
+                        )
+                    ),
+                    new XElement("actions",
+                        new XElement("action", new XAttribute("activationType", "foreground"),
+                            new XAttribute("content", "Yes"), new XAttribute("arguments", "yes"))
+                    /*new XElement("action", new XAttribute("activationType", "background"),
+                        new XAttribute("content", "No"), new XAttribute("arguments", "no"))*/
+                    )
+                )
+            );
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xDoc.ToString());
+            return xmlDoc;
+        }
+
+        public static void CreateNotify()
+        {
+            var xmlDoc = CreateToast();
+            ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+            ToastNotification toast = new ToastNotification(xmlDoc);
+            notifier.Show(toast);
+        }
+
+        public static void UpdateNotify()
+        {
+            var xmlDoc = UpdateToast();
+            ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+            ToastNotification toast = new ToastNotification(xmlDoc);
+            notifier.Show(toast);
+        }
+
+        public static void DeleteNotify()
+        {
+            var xmlDoc = DeleteToast();
+            ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+            ToastNotification toast = new ToastNotification(xmlDoc);
+            notifier.Show(toast);
         }
     }
 }

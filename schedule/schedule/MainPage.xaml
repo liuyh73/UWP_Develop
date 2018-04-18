@@ -63,7 +63,17 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+                <TextBox Grid.Column="2" x:Name="search" VerticalAlignment="Bottom" Width="200" Margin="5 10"/>
+                <Button Grid.Column="3" Click="search_Click" Content="Search" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="5 10"/>
+            </Grid>
 
             <ListView Grid.Row="1" IsItemClickEnabled="True" ItemClick="ListView_ItemClick" 
                             ItemsSource="{x:Bind ViewModel.AllItems}">
@@ -99,9 +109,7 @@
                                                 <AdaptiveTrigger MinWindowWidth="600" />
                                             </VisualState.StateTriggers>
                                         </VisualState>
-
                                     </VisualStateGroup>
-
                                 </VisualStateManager.VisualStateGroups>
 
                                 <CheckBox x:Name="checkBox" Grid.Column="0" IsChecked="{x:Bind Finish, Mode=TwoWay}" Checked="Checked" Unchecked="Unchecked" Margin="7 5 3 5" Height="32" Width="32"/>
@@ -113,6 +121,7 @@
                                         <MenuFlyout>
                                             <MenuFlyoutItem Text="Edit" Click="MenuFlyoutEdit_Click"  />
                                             <MenuFlyoutItem Text="Delete" Click="MenuFlyoutDelete_Click"/>
+                                            <MenuFlyoutItem Text="Share" Click="MenuFlyoutShare_Click"/>
                                         </MenuFlyout>
                                     </AppBarButton.Flyout>
                                 </AppBarButton>
@@ -133,7 +142,7 @@
             <ScrollViewer Grid.Row="1">
                 <StackPanel>
                     <StackPanel Height="Auto" HorizontalAlignment="Center">
-                        <Image x:Name="pic" Width="300" Source="Assets/pic3.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
+                        <Image x:Name="pic" Width="300" Source="Assets/pic1.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <CompositeTransform ScaleX="{Binding Value, ElementName=slider}" ScaleY="{Binding Value, ElementName=slider}"/>
                             </Image.RenderTransform>

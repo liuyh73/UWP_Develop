@@ -63,7 +63,17 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="MyLists" VerticalAlignment="Bottom" Style="{StaticResource header}"/>
+                <TextBox x:ConnectionId='25' Grid.Column="2" x:Name="search" VerticalAlignment="Bottom" Width="200" Margin="5 10"/>
+                <Button x:ConnectionId='26' Grid.Column="3"                      Content="Search" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="5 10"/>
+            </Grid>
 
             <ListView x:ConnectionId='17' Grid.Row="1" IsItemClickEnabled="True"                                
                                                                      >
@@ -99,9 +109,7 @@
                                                 <AdaptiveTrigger MinWindowWidth="600" />
                                             </VisualState.StateTriggers>
                                         </VisualState>
-
                                     </VisualStateGroup>
-
                                 </VisualStateManager.VisualStateGroups>
 
                                 <CheckBox x:ConnectionId='19' x:Name="checkBox" Grid.Column="0"                                                                                  Margin="7 5 3 5" Height="32" Width="32"/>
@@ -113,6 +121,7 @@
                                         <MenuFlyout>
                                             <MenuFlyoutItem x:ConnectionId='22' Text="Edit"                               />
                                             <MenuFlyoutItem x:ConnectionId='23' Text="Delete"                               />
+                                            <MenuFlyoutItem x:ConnectionId='24' Text="Share"                              />
                                         </MenuFlyout>
                                     </AppBarButton.Flyout>
                                 </AppBarButton>
@@ -133,7 +142,7 @@
             <ScrollViewer Grid.Row="1">
                 <StackPanel>
                     <StackPanel Height="Auto" HorizontalAlignment="Center">
-                        <Image x:ConnectionId='11' x:Name="pic" Width="300" Source="Assets/pic3.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
+                        <Image x:ConnectionId='11' x:Name="pic" Width="300" Source="Assets/pic1.ico" Stretch="Fill" Height="180" RenderTransformOrigin="0.5,0.5">
                             <Image.RenderTransform>
                                 <CompositeTransform ScaleX="{Binding Value, ElementName=slider}" ScaleY="{Binding Value, ElementName=slider}"/>
                             </Image.RenderTransform>
@@ -161,8 +170,8 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton x:ConnectionId='24' x:Name="DeleteAppBarButton" Icon="Delete" Label="Delete"                               Visibility="Collapsed"/>
-            <AppBarButton x:ConnectionId='25' x:Name="AddAppBarButton" Icon="Add" Label="Add"                          />
+            <AppBarButton x:ConnectionId='27' x:Name="DeleteAppBarButton" Icon="Delete" Label="Delete"                               Visibility="Collapsed"/>
+            <AppBarButton x:ConnectionId='28' x:Name="AddAppBarButton" Icon="Add" Label="Add"                          />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

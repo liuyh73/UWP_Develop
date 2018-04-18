@@ -1,24 +1,15 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
+﻿using schedule.Services;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Xml;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.UI.Core;
-using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media.Imaging;
+using List.Models;
+using Windows.Storage.Streams;
 
 namespace schedule
 {
@@ -36,58 +27,7 @@ namespace schedule
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            TileContent content = new TileContent()
-            {
-                /*
-                Visual = new TileVisual()
-                {
-                    TileSmall = new TileBinding()
-                    {
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                new AdaptiveText(){ Text = "Small"}
-                            }
-                        }
-                    },
 
-                    TileMedium = new TileBinding()
-                    {
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                new AdaptiveText(){ Text = "Medium"}
-                            }
-                        }
-                    },
-
-                    TileWide = new TileBinding()
-                    {
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                new AdaptiveText(){ Text = "Wide"}
-                            }
-                        }
-                    },
-
-                    TileLarge = new TileBinding()
-                    {
-                        Content = new TileBindingContentAdaptive()
-                        {
-                            Children =
-                            {
-                                new AdaptiveText(){ Text = "Large"}
-                            }
-                        }
-                    },
-                }*/
-            };
-            MainPage.ViewModel1.AddListItem(null, 0.4, "test1", "test1", DateTimeOffset.Now);
-            MainPage.ViewModel1.AddListItem(null, 0.4, "test2", "test2", DateTimeOffset.Now);
         }
 
         /// <summary>
@@ -95,8 +35,41 @@ namespace schedule
         /// 将在启动应用程序以打开特定文件等情况下使用。
         /// </summary>
         /// <param name="e">有关启动请求和过程的详细信息。</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            var composite = ApplicationData.Current.LocalSettings.Values["allItems"] as ApplicationDataCompositeValue;
+            var compositeInfo = ApplicationData.Current.LocalSettings.Values["info"] as ApplicationDataCompositeValue;
+            using (var conn = ScheduleDB.GetDbConnection())
+            {
+                var listItemDBs = conn.Table<ListItemDB>();
+                foreach (var listItemDB in listItemDBs)
+                {
+                    //System.Diagnostics.Debug.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + listItemDB.Date);
+                    BitmapImage bitmapImage = new BitmapImage();
+                    var picName = listItemDB.ImgPath.Substring(listItemDB.ImgPath.LastIndexOf('\\') + 1);
+                    if (picName == "pic1.ico")
+                    {
+                        bitmapImage=new BitmapImage(new Uri("ms-appx:///Assets\\pic1.ico"));
+                    }
+                    else
+                    {
+                        var file = await ApplicationData.Current.LocalFolder.GetFileAsync(picName);
+                        IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
+                        await bitmapImage.SetSourceAsync(fileStream);
+                    }
+
+                    ListItem listItem = new ListItem(listItemDB.Id, bitmapImage, listItemDB.ImgPath, listItemDB.Size, listItemDB.Title, listItemDB.Detail, listItemDB.Date);
+                    listItem.Finish = listItemDB.Finish;
+                    MainPage.ViewModel1.AllItems.Add(listItem);
+                    if (ApplicationData.Current.LocalSettings.Values.ContainsKey("allItems") && (string)composite["seleted"]!="" && listItem.Id == (string)composite["seleted"])
+                        MainPage.ViewModel1.SelectedItem = listItem;
+                    if(ApplicationData.Current.LocalSettings.Values.ContainsKey("info") && (string)compositeInfo["seleted"] != "" && listItem.Id == (string)compositeInfo["seleted"])
+                        MainPage.ViewModel1.SelectedItem = listItem;
+
+                }
+            }
+            TileService.UpdateTile();
+
             Frame rootFrame = Window.Current.Content as Frame;
             // 不要在窗口已包含内容时重复应用程序初始化，
             // 只需确保窗口处于活动状态
@@ -182,6 +155,61 @@ namespace schedule
             //Get the frame navigation state serialized as a string and save in settings
             Frame frame = Window.Current.Content as Frame;
             ApplicationData.Current.LocalSettings.Values["NavigationState"] = frame.GetNavigationState();
+            /*
+            using (var conn = ScheduleDB.GetDbConnection())
+            {
+                var listItemDBs = conn.Table<ListItemDB>();
+
+                foreach (ListItem listitem in MainPage.ViewModel1.AllItems)
+                {
+                    bool flag = true;
+                    foreach(ListItemDB listitemDB in listItemDBs)
+                        if (listitemDB.Id == listitem.Id)
+                        {
+                            listitemDB.ImgPath = listitem.ImgPath;
+                            listitemDB.Size = listitem.Size;
+                            listitemDB.Title = listitem.Title;
+                            listitemDB.Detail = listitem.Detail;
+                            listitemDB.Date = listitem.Date;
+                            listitemDB.Finish = listitem.Finish;
+                            conn.Update(listitemDB);
+                            flag = false;
+                            break;
+                        }
+                    if (flag)
+                    {
+                        ListItemDB listItemDB = new ListItemDB(listitem.Id, listitem.ImgPath, listitem.Size, listitem.Title, listitem.Detail, listitem.Date, listitem.Finish);
+                        conn.Insert(listItemDB);
+                    }
+                }
+
+                foreach (ListItemDB listitemDB in listItemDBs)
+                {
+                    bool flag = false;
+                    foreach (ListItem listitem in MainPage.ViewModel1.AllItems)
+                    {
+                        if (listitem.Id == listitemDB.Id)
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag == false)
+                        conn.Delete(listitemDB);
+                }
+            }
+            */
+            using (var conn = ScheduleDB.GetDbConnection())
+            {
+                conn.DeleteAll<ListItemDB>();
+
+                foreach (ListItem listitem in MainPage.ViewModel1.AllItems)
+                {
+                    //System.Diagnostics.Debug.WriteLine("!!!!!!!!!!!!!!!!!!!!" + listitem.Date.ToLocalTime().ToString() + "!!!!!!!!!!!!!!!!!\n");
+                    ListItemDB listItemDB = new ListItemDB(listitem.Id, listitem.ImgPath, listitem.Size, listitem.Title, listitem.Detail, listitem.Date, listitem.Finish);
+                    conn.Insert(listItemDB);
+                }
+            }
             deferral.Complete();
         }
     }
